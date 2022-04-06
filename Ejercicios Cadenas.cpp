@@ -296,7 +296,34 @@ char CadenaAlfa(){
 }
 
 int EnteroLargo(){
-	
+    char frase[250];
+    cout << "ingrese cadena de caracteres: ";
+    cin.ignore(256, '\n');
+    gets(frase);
+    
+    int numeros = 0;
+    
+    for(int i = 0; i <strlen(frase); i++){
+        if(isdigit(frase[i])){
+            numeros +=1 ;
+        }
+    }
+    cout<<"El total de numeros ingresados son: "<<numeros<<endl;
+    
+    char enteroLargo[numeros];
+    int n = 0;
+    
+    for(int i = 0; i < strlen(frase); i++){
+        if (isdigit(frase[i])){ 
+            enteroLargo[n] = frase[i];
+            n += 1;
+        }
+    }
+    for(int i =0; i < (n); i++){
+        cout << "Los numeros ingresados son: "<<enteroLargo[i]<<endl;
+    }
+
+    cout << "\nnumero conseguido: "<< atoi(enteroLargo);    
 }
 
 char CadenasOrdenadas(){
