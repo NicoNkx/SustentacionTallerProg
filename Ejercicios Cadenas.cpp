@@ -363,7 +363,107 @@ char CadenasOrdenadas(){
 	}
 }
 
+char septimoCad(){
+	int b, z ,j,cd,cd2;
+	char nombre[30];
+	char nombre2[30];
+	cout<<"digite la primer cadena ->";
+	cin.ignore(256, '\n');
+	cin.getline(nombre,38);
+		cout<<"digite la segunda cadena ->";
+	cin.getline(nombre2,38);
+	cd=strlen(nombre);
+	cd2=strlen(nombre2);
+	cout<<"Las cadenas ingresadas son:\n[1]  = "<<nombre<<" \n"; 
+	cout<<"[2]  = "<<nombre2<<" \n\n"; 
+	b=0;
+	z=0;
+	j=0;
+	char cadena[8];
+	char s[]=".";
+	for(int i=0;i<cd;i++){
+		if(nombre[i]>=48&&nombre[i]<=57 && z==0){
+			b=b+1;
+			cadena[j]=nombre[i];
+			j=j+1;
+			if(b==4){
+				z=1;
+				cadena[j]=s[0];	
+			}
+		}
+	}
+	for(int i=0;i<cd2;i++){
+		if(nombre2[i]>=48&&nombre2[i]<=57 && z==1){
+			b=b+1;
+			j=j+1;
+			cadena[j]=nombre2[i];
+			if(b==7){
+				z=2;	
+			}
+		}
+	}
+	for(j=0;j<8;j++){
+		cout<<cadena[j];
+	}
+}
 
+char octavoCad(){
+	int b, z,l,h ,j=0,cd;
+	char nombre[100];
+	cout<<"digite la primer cadena ->";
+	cin.ignore(256, '\n');
+	cin.getline(nombre,102);
+	cd=strlen(nombre);
+	cout<<"Las cadena ingresada es:\n[1]  = "<<nombre<<" \n"; 
+
+	char cadena[cd];
+	char cadena2[cd];
+	char cadena3[cd];
+	for(int i=0;i<cd;i++){
+		if(nombre[i]>=48&&nombre[i]<=57){
+			cadena[j]=nombre[i];
+			j=j+1;
+		
+			}
+		}
+        int n= 0;
+			for(int i=0;i<cd;i++){		
+				if(nombre[i]>=65&&nombre[i]<=90){
+						cadena2[n]=nombre[i];
+						n=n+1;
+			  }
+       		}
+        int J= 0;
+			for(int i=0;i<cd;i++){
+				if(nombre[i]>=97&&nombre[i]<=122){
+						cadena3[J]=nombre[i];
+						J=J+1;
+							
+						
+				}
+				
+			
+			}
+		int nn = j;
+        cout << "\n\n   vector numero   \n";
+		for(int j=0;j<cd;j++){
+			cout<<"\n numeros "<< j+1<<": "<<cadena[j];
+			//cout<<"\nLetras Mayusculas  "<<"   "<<cadena2[j];
+			//cout<<"\nletras Minusculas  "<<"   "<<cadena3[j];
+	    }	
+		cout << "\n\n   vector Mayusculas  \n";
+        for(int j=0;j<cd;j++){
+				//cout<<"\nvalor cadena numeros"<<"   "<<cadena[j];
+				cout<<"\n Mayusculas "<< j+1<<": "<<cadena2[j];
+				//cout<<"\nletras Minusculas  "<<"   "<<cadena3[j];
+	    }
+        cout << "\n\n  vector Minusculas  \n";
+        for(int j=0;j<cd;j++){
+				//cout<<"\nvalor cadena numeros"<<"   "<<cadena[j];
+				//cout<<"\nLetras Mayusculas  "<<"   "<<cadena2[j];
+				cout<<"\n Minusculas " << j+1<<": "<<cadena3[j];
+	    }
+}
 
 int main(){
 	bool valor = true;
@@ -415,6 +515,12 @@ int main(){
 				
 				case 3: cout<<"Ejercicio 6: "<<"Se tiene un arreglo de cadenas, determinar la cadena que alfabeticamente seria la primera y su posicion en el arreglo."<<endl;
 				CadenasOrdenadas();
+				break;
+				case 4: cout<<"Ejercicio 7";
+				septimoCad();
+				break;
+				case 5: cout <<"Ejercicio 8";
+				octavoCad();
 				break;
 			}
 			break;
